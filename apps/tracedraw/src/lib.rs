@@ -394,7 +394,7 @@ pub fn run() -> eframe::Result<()> {
             .with_inner_size(splash::SIZE)
             .with_decorations(false)
             .with_resizable(true)
-            .with_title("TraceDraw")
+            .with_title("Mumtaz Studio")
     } else {
         splash::main_window_builder(&settings, plain)
     };
@@ -454,7 +454,7 @@ pub fn run() -> eframe::Result<()> {
     startup_log::quiet_panics(next.is_some());
     let result = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
         eframe::run_native(
-            "TraceDraw",
+            "Mumtaz Studio",
             options,
             Box::new(move |cc| {
                 gpu::note_renderer(cc, mode);
