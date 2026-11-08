@@ -160,7 +160,7 @@ pub fn curves(painter: &Painter, r: Rect, scale: f32, nodes: &[f32]) {
 pub fn name_galley(painter: &Painter, size: f32) -> Arc<egui::Galley> {
     let mut job = egui::text::LayoutJob::default();
     let font = crate::theme::bold(size);
-    for (part, color) in [("Trace", Color32::WHITE), ("Draw", NAME_ACCENT)] {
+    for (part, color) in [("Mumtaz ", Color32::WHITE), ("Studio", NAME_ACCENT)] {
         job.append(
             part,
             0.0,
