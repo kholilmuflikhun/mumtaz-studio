@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/icon/tracedraw-256.png" alt="TraceDraw" width="120">
+  <img src="assets/icon/tracedraw-256.png" alt="Mumtaz Studio" width="120">
 </p>
 
-<h1 align="center">TraceDraw</h1>
+<h1 align="center">Mumtaz Studio</h1>
 
 <p align="center">
-  <b>Vector illustration, page layout and print; an open-source, clean-room vector editor written from scratch in pure Rust.</b><br>
+  <b>Vector illustration, page layout and print design in one independent hybrid application for web and desktop.</b><br>
   Pages and layers, curves and nodes, artistic and paragraph text, fills and outlines, live effects, symbols, PDF/X and real <code>.cdr</code> files,<br>
   in one native program for Windows, macOS and Linux, and in the browser.
 </p>
@@ -19,9 +19,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/tracedraw/tracedraw/releases"><b>Download</b></a> &middot;
+  <a href="https://github.com/kholilmuflikhun/mumtaz-studio/releases"><b>Releases</b></a> &middot;
   <a href="https://apps.microsoft.com/detail/9P50L12VHF33">Microsoft Store</a>* &middot;
-  <a href="https://tracedraw.github.io/tracedraw/">Open it in the browser</a> &middot;
+  <a href="web/">Web application source</a> &middot;
   <a href="docs/features.md">Feature status</a> &middot;
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
@@ -35,7 +35,7 @@
 </p>
 
 <p align="center">
-  <sub>Alpha: expect bugs. A <code>.cdr</code> file that does not open right? <a href="https://github.com/tracedraw/tracedraw/issues/new?template=cdr_file.yml">Send it in an issue</a>: sample files are what improves the reader most.</sub>
+  <sub>Alpha: expect bugs. A <code>.cdr</code> file that does not open right? <a href="https://github.com/kholilmuflikhun/mumtaz-studio/issues/new">Send it in an issue</a>: sample files are what improves the reader most.</sub>
 </p>
 
 <br>
