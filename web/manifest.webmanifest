@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "TraceDraw",
-  "short_name": "TraceDraw",
-  "description": "Open-source vector editor that opens .cdr files, written in Rust and running in the browser.",
+  "name": "Mumtaz Studio",
+  "short_name": "Mumtaz",
+  "description": "Open-source vector illustration and layout application for web and desktop, powered by Rust.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
