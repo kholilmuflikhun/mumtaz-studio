@@ -22,8 +22,8 @@ version = "0.42.1"
 edition = "2021"
 authors = ["TraceDraw members and contributors"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/tracedraw/tracedraw"
-homepage = "https://github.com/tracedraw/tracedraw"
+repository = "https://github.com/kholilmuflikhun/mumtaz-studio"
+homepage = "https://github.com/kholilmuflikhun/mumtaz-studio"
 rust-version = "1.89"
 
 [workspace.dependencies]
