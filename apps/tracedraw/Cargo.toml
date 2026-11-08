@@ -6,7 +6,7 @@ license.workspace = true
 authors.workspace = true
 repository.workspace = true
 homepage.workspace = true
-description = "TraceDraw: an open-source vector illustration editor"
+description = "Mumtaz Studio: an open-source vector illustration and layout editor"
 
 [[bin]]
 name = "tracedraw"
