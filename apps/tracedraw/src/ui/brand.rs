@@ -1,4 +1,4 @@
-//! The TraceDraw look shared by the About box and the splash screen: a
+//! The Mumtaz Studio identity shared by the About box and the splash screen: a
 //! deep blue gradient, faint light blue curves with selected nodes (a path
 //! being edited), the application icon and the name in two colours.
 
@@ -155,8 +155,8 @@ pub fn curves(painter: &Painter, r: Rect, scale: f32, nodes: &[f32]) {
     }
 }
 
-/// "TraceDraw" laid out in the bold face at `size`: "Trace" in white,
-/// "Draw" in the light blue accent.
+/// "Mumtaz Studio" laid out in the bold face at `size`: "Mumtaz" in white,
+/// "Studio" in the light blue accent.
 pub fn name_galley(painter: &Painter, size: f32) -> Arc<egui::Galley> {
     let mut job = egui::text::LayoutJob::default();
     let font = crate::theme::bold(size);
