@@ -546,7 +546,7 @@ mod tests {
         // would hand a running page the next deploy's files).
         assert!(WORKER.contains("const VERSION = \"@VERSION@\""));
         assert!(WORKER.contains("const BUILD = \"@BUILD@\""));
-        assert!(WORKER.contains("\"tracedraw-shell-\" + VERSION + \"-\" + BUILD"));
+        assert!(WORKER.contains("\"mumtaz-studio-shell-\" + VERSION + \"-\" + BUILD"));
         for kept in [
             "\"./\"",
             "\"index.html\"",
