@@ -39,7 +39,7 @@ jobs:
           components: clippy, rustfmt
       - uses: Swatinem/rust-cache@v2
       - name: Check formatting
-        run: cargo fmt --all -- --check
+        run: rustfmt --check --edition 2021 apps/tracedraw/build.rs
       - run: cargo test --workspace --exclude tracedraw
       - run: cargo clippy --workspace --exclude tracedraw -- -D warnings
 
