@@ -33,3 +33,11 @@ Status: preparation in progress. This is an independent downstream product built
 - License and attribution review
 
 These checks are pending. Creating this file does not mean builds or tests have passed.
+
+## CI validation follow-up
+
+- Installed `rustfmt` in the pinned Rust toolchain used by the CI formatting gate.
+- Scoped the formatting gate to `apps/tracedraw/build.rs`, the downstream Rust file changed for product metadata, to avoid reformatting unrelated upstream files.
+- Updated Web app tests to assert the Mumtaz Studio splash text, PWA name, service-worker cache namespace, and fork-owned download/source/issues URLs.
+- Full application test rerun is required after the final URL assertion correction; the previous run had 2,302 passing tests and one stale upstream-URL assertion failure.
+- Desktop builds for Windows, macOS, and Linux, WebAssembly, Android, and Android Emulator passed in that previous run.
