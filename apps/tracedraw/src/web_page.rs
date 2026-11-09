@@ -430,7 +430,7 @@ mod tests {
             "#1a3158",
             "#0e192d",
             "#5caeff",
-            "Trace<tspan fill=\"#7fc3ff\">Draw</tspan>",
+            "Mumtaz <tspan fill=\"#7fc3ff\">Studio</tspan>",
             "Vector illustration editor",
             "TraceDraw members and contributors",
             "v@VERSION@",
@@ -497,8 +497,8 @@ mod tests {
 
         let manifest: serde_json::Value =
             serde_json::from_str(MANIFEST).expect("the manifest is JSON");
-        assert_eq!(manifest["name"], "TraceDraw");
-        assert_eq!(manifest["short_name"], "TraceDraw");
+        assert_eq!(manifest["name"], "Mumtaz Studio");
+        assert_eq!(manifest["short_name"], "Mumtaz");
         assert_eq!(manifest["display"], "standalone");
         assert_eq!(manifest["orientation"], "any");
         assert_eq!(manifest["start_url"], "./");
