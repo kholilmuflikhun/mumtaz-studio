@@ -36,7 +36,7 @@ jobs:
       # bump it together with the version noted in AGENTS.md.
       - uses: dtolnay/rust-toolchain@1.97.0
         with:
-          components: clippy
+          components: clippy, rustfmt
       - uses: Swatinem/rust-cache@v2
       - name: Check formatting
         run: cargo fmt --all -- --check
