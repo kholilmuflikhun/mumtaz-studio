@@ -7,7 +7,10 @@ fn main() {
         let mut res = winresource::WindowsResource::new();
         res.set_icon("../../assets/icon/tracedraw.ico");
         res.set("ProductName", "Mumtaz Studio");
-        res.set("FileDescription", "Mumtaz Studio vector illustration and layout editor");
+        res.set(
+            "FileDescription",
+            "Mumtaz Studio vector illustration and layout editor",
+        );
         res.set("CompanyName", "Mumtaz Studio");
         res.set(
             "LegalCopyright",
