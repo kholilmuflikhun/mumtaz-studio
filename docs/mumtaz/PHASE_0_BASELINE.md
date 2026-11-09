@@ -1,6 +1,6 @@
 # Mumtaz Studio: Phase 0 baseline
 
-Status: preparation in progress. This is an independent downstream product built from the TraceDraw open-source codebase.
+Status: Phase 0 foundation and initial branding validation passed. This is an independent downstream product built from the TraceDraw open-source codebase.
 
 ## Verified fork baseline
 - Repository: https://github.com/kholilmuflikhun/mumtaz-studio
@@ -23,7 +23,7 @@ Status: preparation in progress. This is an independent downstream product built
 8. Do not require accounts or cloud connectivity for local editing.
 
 ## Required verification before release
-- cargo fmt --all -- --check
+- CI formatting gate for the downstream Rust build script (`rustfmt --check --edition 2021 apps/tracedraw/build.rs`)
 - cargo test --workspace
 - cargo build -p tracedraw
 - cargo clippy --workspace --all-targets -- -D warnings
@@ -32,12 +32,19 @@ Status: preparation in progress. This is an independent downstream product built
 - Malformed input regression tests
 - License and attribution review
 
-These checks are pending. Creating this file does not mean builds or tests have passed.
+The complete PR CI matrix passed on commit `197fe8fcb74143b5fa9c2630122cb5bee72e3040`, including workspace tests, app tests, Clippy, WebAssembly/PWA, Android, Android Emulator, and Windows/macOS/Linux desktop builds. This does not constitute a production release or a manual end-user launch/file round-trip test.
 
 ## CI validation follow-up
 
 - Installed `rustfmt` in the pinned Rust toolchain used by the CI formatting gate.
 - Scoped the formatting gate to `apps/tracedraw/build.rs`, the downstream Rust file changed for product metadata, to avoid reformatting unrelated upstream files.
 - Updated Web app tests to assert the Mumtaz Studio splash text, PWA name, service-worker cache namespace, and fork-owned download/source/issues URLs.
-- Full application test rerun is required after the final URL assertion correction; the previous run had 2,302 passing tests and one stale upstream-URL assertion failure.
-- Desktop builds for Windows, macOS, and Linux, WebAssembly, Android, and Android Emulator passed in that previous run.
+- Updated the web test expectations to match the Mumtaz Studio splash text, PWA name, service-worker cache namespace, and fork-owned URLs.
+- The full CI matrix passed on the commit recorded above.
+
+## Platform display-name rebranding
+
+- Linux desktop launcher display name and description now identify Mumtaz Studio; executable command, icon identifier, MIME types, and startup class remain unchanged.
+- Android launcher/activity labels now identify Mumtaz Studio; package ID and native library name remain unchanged for compatibility.
+- macOS bundle display/name and document type descriptions now identify Mumtaz Studio; bundle identifier, executable, UTI identifiers, and file extensions remain unchanged.
+- These platform metadata changes are awaiting the next CI run before being marked validated.
