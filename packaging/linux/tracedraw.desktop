@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=TraceDraw
-Comment=Vector illustration editor
+Name=Mumtaz Studio
+Comment=Vector illustration, page layout and print design
 Exec=tracedraw %F
 Icon=tracedraw
 Terminal=false
