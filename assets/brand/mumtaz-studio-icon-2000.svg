@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="2000" viewBox="0 0 2000 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Mumtaz Studio symbol</title>
+  <desc id="desc">Text-free Mumtaz Studio icon: white geometric M, electric-blue ribbon and amber accent on a deep-navy rounded square.</desc>
+  <rect width="2000" height="2000" fill="#FFFFFF"/>
+  <rect x="160" y="160" width="1680" height="1680" rx="430" fill="#08244B"/>
+  <path d="M430 1435V650c0-115 132-176 222-101l348 290 348-290c90-75 222-14 222 101v785c0 104-126 157-201 84l-115-112c-29-28-45-67-45-107V875L1000 1080 791 905v530c0 40-16 79-45 107l-115 112c-75 73-201 20-201-84Z" fill="#FFFFFF"/>
+  <path d="M1005 1195 1430 860v300c0 56-25 109-68 145l-590 493c-72 60-182 9-182-85v-205c0-47 21-91 58-121l357-292Z" fill="#0878E8"/>
+  <path d="M1390 1245c29-23 70-23 99 0l190 150c44 35 44 102 0 137l-190 150c-57 45-140 5-140-68v-301c0-27 15-53 41-68Z" fill="#F5A623"/>
+</svg>
