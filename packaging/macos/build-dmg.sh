@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build TraceDraw.app and a DMG. Usage: build-dmg.sh <version> <release-dir> <arch-label>
+# Build the Mumtaz Studio application bundle and a DMG. Usage: build-dmg.sh <version> <release-dir> <arch-label>
 # Unsigned: first launch needs right-click > Open (or xattr -d com.apple.quarantine).
 set -euo pipefail
 VERSION="$1"; BIN="$2"; ARCH="$3"
@@ -30,7 +30,7 @@ cp -R "$APP" "$STAGE/"; ln -s /Applications "$STAGE/Applications"
 # waiting longer each time. A last failure is reported as a build
 # annotation, which shows without the job's log.
 for attempt in 1 2 3 4 5 6 7; do
-  if out=$(hdiutil create -volname "TraceDraw" -srcfolder "$STAGE" -ov -format UDZO "$DMG" 2>&1); then
+  if out=$(hdiutil create -volname "Mumtaz Studio" -srcfolder "$STAGE" -ov -format UDZO "$DMG" 2>&1); then
     echo "$out"
     break
   fi
