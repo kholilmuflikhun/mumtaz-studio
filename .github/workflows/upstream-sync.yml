@@ -64,7 +64,7 @@ jobs:
         run: |
           set -euo pipefail
           branch="automation/upstream-sync"
-          git push --force-with-lease origin "HEAD:refs/heads/${branch}"
+          git push --force origin "HEAD:refs/heads/${branch}"
 
           body=$(cat <<'EOF'
           ## Automated TraceDraw upstream synchronization
