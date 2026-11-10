@@ -4,7 +4,7 @@
 set -euo pipefail
 VERSION="$1"; BIN="$2"; ARCH="$3"
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
-APP="$ROOT/dist/TraceDraw.app"
+APP="$ROOT/dist/Mumtaz Studio.app"
 rm -rf "$APP"; mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 sed "s/__VERSION__/$VERSION/g" "$ROOT/packaging/macos/Info.plist" > "$APP/Contents/Info.plist"
 cp "$BIN/tracedraw" "$BIN/tracedraw-cli" "$APP/Contents/MacOS/"
