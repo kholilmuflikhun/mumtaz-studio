@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Mumtaz Studio mark</title>
+  <desc id="desc">An original geometric M monogram in white and sky blue on a deep navy rounded square.</desc>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="#13243D"/>
+  <path d="M112 372V140l144 144 144-144v232" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 284v88" fill="none" stroke="#7FC3FF" stroke-width="42" stroke-linecap="round"/>
+  <circle cx="256" cy="284" r="14" fill="#7FC3FF"/>
+</svg>
