@@ -79,7 +79,7 @@ jobs:
           body=$(cat <<'EOF'
           ## Automated TraceDraw upstream synchronization
 
-          This draft PR merges the latest `tracedraw/tracedraw:main` into Mumtaz Studio `main`.
+          This pull request merges the latest `tracedraw/tracedraw:main` into Mumtaz Studio `main`.
 
           - No direct push to `main`.
           - No automatic merge.
