@@ -2,8 +2,9 @@ name: upstream-sync
 
 on:
   schedule:
-    # Weekly on Sunday at 04:00 UTC (11:00 WIB).
-    - cron: "0 4 * * 0"
+    # Poll upstream every five minutes (GitHub Actions minimum schedule interval).
+    # This is near-real-time polling, not an upstream push webhook.
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -94,5 +95,5 @@ jobs:
           if [ -n "$existing" ]; then
             gh pr edit "$existing" --repo "$REPOSITORY" --title "chore: sync TraceDraw upstream" --body "$body"
           else
-            gh pr create --repo "$REPOSITORY" --draft --base main --head "$branch" --title "chore: sync TraceDraw upstream" --body "$body"
+            gh pr create --repo "$REPOSITORY" --base main --head "$branch" --title "chore: sync TraceDraw upstream" --body "$body"
           fi
