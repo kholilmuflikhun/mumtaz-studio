@@ -10,19 +10,19 @@ A true push-triggered integration requires a webhook delivered by the upstream r
 
 Add an Actions secret named `UPSTREAM_SYNC_TOKEN` in Mumtaz Studio repository settings.
 
-Use a fine-grained personal access token scoped only to `kholilmuflikhun/mumtaz-studio` with:
+Prefer a fine-grained token owned by a dedicated automation/bot account, not the human reviewer. That makes the bot the PR author and allows the repository owner to submit the required approval. If a personal token belonging to the owner creates the PR, GitHub will not allow that same owner to approve their own PR. Scope the token only to `kholilmuflikhun/mumtaz-studio` with:
 - Contents: Read and write
 - Pull requests: Read and write
 - Metadata: Read (automatically granted)
 
-The token is used to publish the automation branch and open/update the upstream review PR. It is deliberately not stored in the repository.
+The token is used to publish the automation branch and open/update the upstream review PR. It is deliberately not stored in the repository. Never paste the token into chat, commit it, or place it in workflow YAML.
 
 ## Required merge protection
 
 Configure a repository ruleset or branch protection rule targeting `main`:
 
 - Require a pull request before merging.
-- Require at least 1 approving review from someone other than the PR author.
+- Require at least 1 approving review from someone other than the PR author (the repository owner can approve when the bot account created the PR).
 - Dismiss stale approvals when new commits are pushed.
 - Require conversation resolution.
 - Require all applicable status checks:
