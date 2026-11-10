@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/brand/mumtaz-studio-mark.svg" alt="Mumtaz Studio" width="120">
+  <img src="assets/brand/mumtaz-studio-master.svg" alt="Mumtaz Studio" width="720">
 </p>
 
 <h1 align="center">Mumtaz Studio</h1>
