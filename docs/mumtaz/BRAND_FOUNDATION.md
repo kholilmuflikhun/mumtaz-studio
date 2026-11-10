@@ -34,3 +34,18 @@ The first original mark is `assets/brand/mumtaz-studio-mark.svg`. It uses a geom
 ## Migration boundary
 
 This SVG is an original source asset only. Existing PNG, ICO, ICNS, Android density, and Microsoft Store icon assets remain unchanged until matching raster exports are generated and verified at every required size. The current app continues using those existing icons temporarily; the new mark is not yet wired into release packages.
+
+
+## Master logo
+
+The approved master logo source is `assets/brand/mumtaz-studio-master.svg`. Use this full lockup as the canonical README and brand reference. It combines the navy emblem, white geometric M, electric-blue ribbon, amber accent, Mumtaz Studio wordmark, and the tagline “Studio Kreatif untuk Desain Teknis & Dokumen Visual”. Keep the SVG as the source of truth for future raster exports. Do not replace platform icons until each required size and transparent/background variant has been exported and visually checked.
+
+### Master palette
+
+| Token | Hex | Role |
+|---|---|---|
+| Deep navy | `#08244B` | Emblem and primary wordmark |
+| Electric blue | `#0878E8` / `#12A9F4` | Studio wordmark and ribbon accent |
+| Amber | `#F5A623` | Small warm accent |
+| White | `#FFFFFF` | Emblem negative space and canvas |
+| Slate gray | `#69717C` | Tagline |
