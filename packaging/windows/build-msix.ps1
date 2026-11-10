@@ -1,4 +1,4 @@
-# Build the MSIX package of TraceDraw for the Microsoft Store.
+# Build the Mumtaz Studio MSIX package for the Microsoft Store.
 #
 # The Store signs the package itself, so this package is not signed. The
 # identity comes from the app's Product identity page in Partner Center,
@@ -44,9 +44,9 @@ if ($store) {
     $outDir = Join-Path $root 'dist'
 } else {
     Write-Host 'MSIX: no Store identity set, building a check package only'
-    $identity = 'TraceDraw.Check'
-    $publisher = 'CN=TraceDraw Check'
-    $publisherName = 'TraceDraw'
+    $identity = 'MumtazStudio.Check'
+    $publisher = 'CN=Mumtaz Studio Check'
+    $publisherName = 'Mumtaz Studio'
     $outDir = Join-Path $root 'msix-check'
 }
 
