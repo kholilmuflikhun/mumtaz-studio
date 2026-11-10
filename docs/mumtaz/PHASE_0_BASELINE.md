@@ -48,3 +48,12 @@ The complete PR CI matrix passed on commit `197fe8fcb74143b5fa9c2630122cb5bee72e
 - Android launcher/activity labels now identify Mumtaz Studio; package ID and native library name remain unchanged for compatibility.
 - macOS bundle display/name and document type descriptions now identify Mumtaz Studio; bundle identifier, executable, UTI identifiers, and file extensions remain unchanged.
 - These platform metadata changes are awaiting the next CI run before being marked validated.
+
+
+## Packaging and installer identity follow-up
+
+- Windows Inno Setup and MSIX display labels now use Mumtaz Studio. The upstream installer language-selection behavior from PR #1786 is retained; only user-facing product strings were changed.
+- Windows ProgID `TraceDraw.Document`, installer language registry storage, executable names, and artifact filename conventions remain stable for this migration stage.
+- Linux AppImage bootstrap retries transient download failures, uses HTTP fail-on-status handling, validates the downloaded executable's ELF magic, and only then moves it into the build cache.
+- macOS DMG volume and application bundle display name now use Mumtaz Studio; internal executable and icon filenames remain unchanged.
+- Current packaging changes are pending CI validation. The previous Linux ARM64 package failure was caused by a transient HTTP 504 response returning HTML in place of linuxdeploy.
