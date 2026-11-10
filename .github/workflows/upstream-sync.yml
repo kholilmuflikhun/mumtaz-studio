@@ -18,12 +18,21 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Require a token that can trigger pull request CI
+        env:
+          UPSTREAM_SYNC_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
+        run: |
+          if [ -z "$UPSTREAM_SYNC_TOKEN" ]; then
+            echo "::error::Add the UPSTREAM_SYNC_TOKEN repository secret. A PAT is required so the generated PR triggers normal CI workflows."
+            exit 1
+          fi
+
       - name: Checkout Mumtaz Studio main
         uses: actions/checkout@v5
         with:
           ref: main
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
 
       - name: Configure Git identity
         run: |
@@ -59,7 +68,7 @@ jobs:
       - name: Publish sync branch and open/update review PR
         if: steps.merge.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
           REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
