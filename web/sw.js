@@ -14,10 +14,10 @@
 // that is up keeps its own files; the next start takes the new deploy.
 const VERSION = "@VERSION@";
 const BUILD = "@BUILD@";
-const SHELL_CACHE = "tracedraw-shell-" + VERSION + "-" + BUILD;
+const SHELL_CACHE = "mumtaz-studio-shell-" + VERSION + "-" + BUILD;
 // Fonts the page fetches from its font folder the first time text needs
 // them (web/FONTS.md): kept across versions, their files are pinned.
-const FONT_CACHE = "tracedraw-fonts";
+const FONT_CACHE = "mumtaz-studio-fonts";
 // Relative to this file, which sits beside index.html.
 const SHELL = [
   "./",
@@ -47,7 +47,7 @@ self.addEventListener("activate", (event) => {
       const names = await caches.keys();
       await Promise.all(
         names
-          .filter((name) => name.startsWith("tracedraw-shell-") && name !== SHELL_CACHE)
+          .filter((name) => name.startsWith("mumtaz-studio-shell-") && name !== SHELL_CACHE)
           .map((name) => caches.delete(name))
       );
       await self.clients.claim();

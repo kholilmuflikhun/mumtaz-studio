@@ -26,7 +26,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="TraceDraw"
+        android:label="Mumtaz Studio"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:hasCode="true"
@@ -45,7 +45,7 @@
              it again in a new process instead of closing it. -->
         <activity
             android:name="dev.tracedraw.app.TraceDrawActivity"
-            android:label="TraceDraw"
+            android:label="Mumtaz Studio"
             android:exported="true"
             android:launchMode="singleTask"
             android:stateNotNeeded="true"

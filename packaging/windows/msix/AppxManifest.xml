@@ -10,7 +10,7 @@
   <Identity Name="{IDENTITY}" Publisher="{PUBLISHER}" Version="{VERSION}" ProcessorArchitecture="x64" />
 
   <Properties>
-    <DisplayName>TraceDraw</DisplayName>
+    <DisplayName>Mumtaz Studio</DisplayName>
     <PublisherDisplayName>{PUBLISHER_NAME}</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -37,8 +37,8 @@
   <Applications>
     <Application Id="TraceDraw" Executable="tracedraw.exe" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="TraceDraw"
-        Description="Open-source vector editor"
+        DisplayName="Mumtaz Studio"
+        Description="Mumtaz Studio: vector illustration, page layout and print design"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
@@ -47,7 +47,7 @@
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="tdraw">
-            <uap:DisplayName>TraceDraw Document</uap:DisplayName>
+            <uap:DisplayName>Mumtaz Studio Document</uap:DisplayName>
             <uap:SupportedFileTypes>
               <uap:FileType>.tdraw</uap:FileType>
             </uap:SupportedFileTypes>

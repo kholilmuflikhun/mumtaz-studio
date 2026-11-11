@@ -1,0 +1,6 @@
+# Require the repository owner to review product identity, CI, and release-policy changes.
+* @kholilmuflikhun
+/.github/workflows/ @kholilmuflikhun
+/docs/mumtaz/ @kholilmuflikhun
+/packaging/ @kholilmuflikhun
+/assets/brand/ @kholilmuflikhun

@@ -1,0 +1,99 @@
+name: upstream-sync
+
+on:
+  schedule:
+    # Poll upstream every five minutes (GitHub Actions minimum schedule interval).
+    # This is near-real-time polling, not an upstream push webhook.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: mumtaz-studio-upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a token that can trigger pull request CI
+        env:
+          UPSTREAM_SYNC_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
+        run: |
+          if [ -z "$UPSTREAM_SYNC_TOKEN" ]; then
+            echo "::error::Add the UPSTREAM_SYNC_TOKEN repository secret. A PAT is required so the generated PR triggers normal CI workflows."
+            exit 1
+          fi
+
+      - name: Checkout Mumtaz Studio main
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
+
+      - name: Configure Git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch TraceDraw upstream
+        run: |
+          git remote add upstream https://github.com/tracedraw/tracedraw.git
+          git fetch --no-tags upstream main
+
+      - name: Merge upstream without overwriting Mumtaz Studio changes
+        id: merge
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git merge-base --is-ancestor upstream/main origin/main && {
+            echo "Upstream is already contained in Mumtaz Studio main."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          }
+
+          if ! git merge --no-edit upstream/main; then
+            git merge --abort || true
+            echo "::error::Upstream sync has conflicts. No branch was pushed and no files were overwritten."
+            echo "::error::Resolve the conflicts in a dedicated integration branch, then rerun the sync."
+            exit 1
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Publish sync branch and open/update review PR
+        if: steps.merge.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          branch="automation/upstream-sync"
+          git push --force origin "HEAD:refs/heads/${branch}"
+
+          body=$(cat <<'EOF'
+          ## Automated TraceDraw upstream synchronization
+
+          This pull request merges the latest `tracedraw/tracedraw:main` into Mumtaz Studio `main`.
+
+          - No direct push to `main`.
+          - No automatic merge.
+          - All CI checks must pass before human review.
+          - Resolve conflicts deliberately; preserve Mumtaz Studio branding, downstream features, compatibility identifiers, and upstream attribution.
+          - Review upstream changes for architecture, licensing, security, and file-format compatibility.
+
+          Source: https://github.com/tracedraw/tracedraw
+          EOF
+          )
+
+          existing=$(gh pr list --repo "$REPOSITORY" --state open --head "$branch" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --repo "$REPOSITORY" --title "chore: sync TraceDraw upstream" --body "$body"
+          else
+            gh pr create --repo "$REPOSITORY" --base main --head "$branch" --title "chore: sync TraceDraw upstream" --body "$body"
+          fi

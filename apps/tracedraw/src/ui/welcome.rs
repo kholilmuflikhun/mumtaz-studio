@@ -108,7 +108,7 @@ pub fn welcome_screen(app: &mut App, ui: &mut Ui) {
     // The tabs go on to a second line on a narrow screen (#1691).
     ui.horizontal_wrapped(|ui| {
         ui.add_space(24.0);
-        ui.heading(egui::RichText::new("TraceDraw").size(26.0));
+        ui.heading(egui::RichText::new("Mumtaz Studio").size(26.0));
         ui.add_space(30.0);
         for (tab, key) in [
             (WelcomeTab::GetStarted, "welcome.get_started"),

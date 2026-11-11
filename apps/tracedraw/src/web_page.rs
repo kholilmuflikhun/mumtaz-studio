@@ -430,7 +430,7 @@ mod tests {
             "#1a3158",
             "#0e192d",
             "#5caeff",
-            "Trace<tspan fill=\"#7fc3ff\">Draw</tspan>",
+            "Mumtaz <tspan fill=\"#7fc3ff\">Studio</tspan>",
             "Vector illustration editor",
             "TraceDraw members and contributors",
             "v@VERSION@",
@@ -440,9 +440,9 @@ mod tests {
             "Written in Rust",
             "MIT or Apache-2.0",
             // Where to go when loading stalls.
-            "https://github.com/tracedraw/tracedraw/releases/latest",
-            "https://github.com/tracedraw/tracedraw\"",
-            "https://github.com/tracedraw/tracedraw/issues",
+            "https://github.com/kholilmuflikhun/mumtaz-studio/releases",
+            "https://github.com/kholilmuflikhun/mumtaz-studio\"",
+            "https://github.com/kholilmuflikhun/mumtaz-studio/issues",
             // Which screens it is for.
             "desktop browser",
             "Window &gt; Workspace &gt; Touch",
@@ -497,8 +497,8 @@ mod tests {
 
         let manifest: serde_json::Value =
             serde_json::from_str(MANIFEST).expect("the manifest is JSON");
-        assert_eq!(manifest["name"], "TraceDraw");
-        assert_eq!(manifest["short_name"], "TraceDraw");
+        assert_eq!(manifest["name"], "Mumtaz Studio");
+        assert_eq!(manifest["short_name"], "Mumtaz");
         assert_eq!(manifest["display"], "standalone");
         assert_eq!(manifest["orientation"], "any");
         assert_eq!(manifest["start_url"], "./");
@@ -546,7 +546,7 @@ mod tests {
         // would hand a running page the next deploy's files).
         assert!(WORKER.contains("const VERSION = \"@VERSION@\""));
         assert!(WORKER.contains("const BUILD = \"@BUILD@\""));
-        assert!(WORKER.contains("\"tracedraw-shell-\" + VERSION + \"-\" + BUILD"));
+        assert!(WORKER.contains("\"mumtaz-studio-shell-\" + VERSION + \"-\" + BUILD"));
         for kept in [
             "\"./\"",
             "\"index.html\"",

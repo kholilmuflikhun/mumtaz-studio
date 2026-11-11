@@ -142,3 +142,8 @@ behind it, and never add a feature without updating the row.
   as bare literals in the UI.
 - Acceptance criteria in `docs/acceptance.md` are tests; when one changes,
   change the test.
+
+
+## Downstream product identity: Mumtaz Studio
+
+This repository is a downstream fork maintained as the independent Mumtaz Studio product. In user-facing application UI, browser shell, desktop metadata, packaging descriptions, and downstream product documentation, use the name **Mumtaz Studio**. Keep upstream Rust crate names, binary names, file extensions, compatibility identifiers, and upstream URLs where required for technical compatibility or provenance until a separately reviewed migration exists. Preserve all upstream copyright, license notices, and third-party attribution; never imply upstream endorsement. Do not alter the document engine or bypass the command-based mutation architecture for branding work.

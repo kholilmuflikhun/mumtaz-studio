@@ -13,7 +13,22 @@ cp "$BIN/tracedraw" "$BIN/tracedraw-cli" "$DIR/usr/bin/"
 cp "$ROOT/packaging/linux/tracedraw.desktop" "$DIR/usr/share/applications/"
 cp "$ROOT/assets/icon/tracedraw-256.png" "$DIR/usr/share/icons/hicolor/256x256/apps/tracedraw.png"
 TOOL="$ROOT/dist/linuxdeploy.AppImage"
-[ -f "$TOOL" ] || curl -sSL -o "$TOOL" https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$TOOL_ARCH.AppImage
+if [ ! -f "$TOOL" ]; then
+  TMP_TOOL="$TOOL.tmp"
+  rm -f "$TMP_TOOL"
+  curl --fail --location --retry 5 --retry-all-errors --retry-delay 2 \
+    --connect-timeout 20 --output "$TMP_TOOL" \
+    "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-$TOOL_ARCH.AppImage"
+  # AppImages are ELF executables. Reject proxy/error HTML before caching.
+  MAGIC="$(od -An -tx1 -N4 "$TMP_TOOL" | tr -d ' \n')"
+  if [ "$MAGIC" != "7f454c46" ]; then
+    echo "Downloaded linuxdeploy is not an ELF executable (magic: $MAGIC)" >&2
+    rm -f "$TMP_TOOL"
+    exit 1
+  fi
+  chmod +x "$TMP_TOOL"
+  mv "$TMP_TOOL" "$TOOL"
+fi
 chmod +x "$TOOL"
 cd "$ROOT/dist"
 OUT="tracedraw-$VERSION-linux-$NAME.AppImage"

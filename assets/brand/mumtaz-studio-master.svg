@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Mumtaz Studio master logo</title>
+  <desc id="desc">A navy rounded-square emblem with a white geometric M, electric-blue ribbon and warm amber accent, beside the Mumtaz Studio wordmark and Indonesian tagline.</desc>
+  <rect width="1600" height="1000" fill="#FFFFFF"/>
+  <g transform="translate(110 280)">
+    <rect width="440" height="440" rx="96" fill="#08244B"/>
+    <path d="M96 330V112c0-18 20-29 35-18l89 67 89-67c15-11 35 0 35 18v103l-87 61c-10 7-23 7-33 0l-53-38v92c0 20-16 36-36 36s-39-16-39-36Z" fill="#FFFFFF"/>
+    <path d="M151 263 322 138c10-7 24-5 31 5l0 76-177 128c-12 9-29 0-29-15v-47c0-9 1-16 4-22Z" fill="#12A9F4"/>
+    <path d="M297 263c8-6 18-6 26 0l46 34c13 9 13 28 0 37l-46 34c-15 11-36 0-36-18v-69c0-7 4-14 10-18Z" fill="#F5A623"/>
+  </g>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" font-weight="800">
+    <text x="630" y="465" font-size="190" letter-spacing="-8" fill="#08244B">Mumtaz</text>
+    <text x="630" y="645" font-size="190" letter-spacing="-8" fill="#0878E8">Studio</text>
+    <text x="1430" y="355" font-size="42" fill="#08244B">™</text>
+  </g>
+  <g fill="#69717C" font-family="Inter, Arial, Helvetica, sans-serif" font-size="34" font-weight="500" text-anchor="middle">
+    <text x="800" y="820">Studio Kreatif untuk Desain Teknis &amp; Dokumen Visual</text>
+  </g>
+  <path d="M115 808h75M1410 808h75" stroke="#A6AFBA" stroke-width="5" stroke-linecap="round"/>
+</svg>
